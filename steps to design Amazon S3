@@ -1,0 +1,57 @@
+Design highly scalable static website using Amazon S3 with below requirement:
+    Enable Versioning on all objects in S3 bucket
+    Enable Amazon S3 (SSE S3) based encryption for  S3 bucket
+    Enable Replication in such way that all objects in S3 bucket with replicate to another bucket in Singapore region (Cross Region Replication)
+    Setup Lifecycle rule which will fulfil below conditions-
+     - By default move files older than 30 days from Standard Storage to Infrequent                                                       
+        Access
+      - Move files older than 180 days to Glacier-
+      - Move files older than 365 days to Deep Glacier-Permanently 
+      - delete previous versions which are older than 90 days
+    Enable email notification whenever new object will get added/deleted from S3 bucket
+Steps:
+1.Search for S3
+2.Create bucket.
+3.Give Bucket name and select aws region.
+4.Select Object Ownership as per recommendation.
+5.Give public access 
+6.Enable Versioning to see multiple versions and add tag.
+7.Enable Amazon S3 (SSE S3) based encryption for  S3 bucket.
+8.Create bucket.
+9.From Upload you can add new files and folders.
+10.One file is added.(e.g index.html)
+11.click on Upload.
+12.Make some changes in same file and Upload one more time.
+13.To see versions ,enable show versions .
+14.Enable Amazon S3 (SSE S3) based encryption for  S3 bucket.
+    Add Bucket policy ,to provide access to the objects stored in bucket and save changes.
+    (Ref link to add policy:https://awspolicygen.s3.amazonaws.com/policygen.html)
+15.Enable Replication in such way that all objects in S3 bucket with replicate to another bucket in Singapore region (Cross Region Replication)
+      For that, create one more bucket in the Singapore region.
+      Add replication rule for bucket which was created in Mumbai region.
+      In management section , create the Replication rule.
+      Configure Replication rule:
+      Save the rule.Once , rule is created add one more file in mumbai region ,this file will be replicated in singapore region.
+      Here ,we see file is replicated.
+
+16.Setup Lifecycle rule
+    Create lifecycle as per requirement.
+    Click on Create rule.
+
+17.Enable email notification whenever a new object will get added/deleted from S3 bucket.
+    Search for SNS and click on Simple Notification Service.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
